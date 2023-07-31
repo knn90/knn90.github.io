@@ -1,0 +1,4 @@
+baseURL: "https://knn90.github.io/"
+title: ExampleSite
+paginate: 5
+theme: PaperMod
