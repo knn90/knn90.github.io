@@ -34,6 +34,8 @@ jobs:
     env:
       HUGO_VERSION: 0.115.4
     steps:
+      - name: navigate to knxcode folder
+        run: "cd ./knxcode/"
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
@@ -63,7 +65,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./knxcode/public
+          path: ./public
 
   # Deployment job
   deploy:
