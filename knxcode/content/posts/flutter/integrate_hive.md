@@ -35,8 +35,8 @@ You can find everything here https://pub.dev/packages/hive
     }
    ```
 
-4. From terminal run `dart run build_runner build` to generate the HiveAdapter
-5. Initialize HiveBox, register adapters(if any), and open the box with name.
+4. From the terminal, run `dart run build_runner build` to generate the HiveAdapter
+5. Initialize HiveBox, register adapters(if any), and open the box with its name.
    ```Dart
    await Hive.initFlutter();
    Hive.registerAdapter(YourModelAdapter());
