@@ -18,7 +18,7 @@ You can find everything here https://pub.dev/packages/hive
 2. From Visual Studio Code
    `Cmd + Shift + P`
    to `Add Dev dependency` then search for `build_runner` and `hive_generator`
-3. Conforms model to `HiveType` and import `part [model_name].g.dart` to generate the adapter in the next step
+3. Conform model to `HiveType` and import `part [model_name].g.dart` to generate the adapter in the next step
 
    ```Dart
    import 'package:hive_flutter/hive_flutter.dart';
