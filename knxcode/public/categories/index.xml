@@ -5,6 +5,16 @@
     <link>https://knn90.github.io/categories/</link>
     <description>Recent content in Categories on knxCode</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://knn90.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Aug 2023 11:38:01 +0700</lastBuildDate><atom:link href="https://knn90.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>flutter</title>
+      <link>https://knn90.github.io/categories/flutter/</link>
+      <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
+      
+      <guid>https://knn90.github.io/categories/flutter/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
