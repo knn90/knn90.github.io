@@ -4,15 +4,15 @@ theme: PaperMod
 
 menu:
   main:
-    - identifier: Flutter
-      name: Flutter
-      url: /categories/flutter
-      weight: 2
-    - identifier: iOS
+    - identifier: IOS
       name: iOS
       url: /categories/ios
       weight: 1
-    - identifier: tags
-      name: tags
+    - identifier: FLUTTER
+      name: Flutter
+      url: /categories/flutter
+      weight: 2
+    - identifier: TAGS
+      name: Tags
       url: /tags/
       weight: 3
