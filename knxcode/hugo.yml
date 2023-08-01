@@ -1,3 +1,18 @@
 baseURL: "https://knn90.github.io/"
-title: ExampleSite
+title: knxCode
 theme: PaperMod
+
+menu:
+  main:
+    - identifier: Flutter
+      name: Flutter
+      url: /categories/flutter
+      weight: 2
+    - identifier: iOS
+      name: iOS
+      url: /categories/ios
+      weight: 1
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 3
