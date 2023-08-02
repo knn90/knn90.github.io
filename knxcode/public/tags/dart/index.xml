@@ -14,9 +14,9 @@
       
       <guid>https://knn90.github.io/posts/flutter/integrate_hive/</guid>
       <description>Hive introduction You can find everything here https://pub.dev/packages/hive
-Steps From Visual Studio Code Cmd + Shift + P to Add dependency then search for hive_flutter
-From Visual Studio Code Cmd + Shift + P to Add Dev dependency then search for build_runner and hive_generator
-Conforms model to HiveType and import part [model_name].g.dart to generate the adapter in the next step
+Steps From Visual Studio Code Cmd + Shift + P to Add dependency then search for hive_flutter.
+From Visual Studio Code Cmd + Shift + P to Add Dev dependency then search for build_runner and hive_generator.
+Mark the model as HiveType and import part [model_name].g.dart to generate the adapter in the next step.
 import &amp;#39;package:hive_flutter/hive_flutter.dart&amp;#39;; part &amp;#39;model.g.dart&amp;#39;; @HiveType(typeId: 0) class YourModel { @HiveField(0) final String property1; @HiveField(1) final String property2; YourModel(this.</description>
     </item>
     
