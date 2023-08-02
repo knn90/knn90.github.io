@@ -6,7 +6,17 @@
     <description>Recent content in Posts on knxCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Aug 2023 11:38:01 +0700</lastBuildDate><atom:link href="https://knn90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[iOS] Handle deep link with chain responsibility pattern</title>
+      <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
+      <pubDate>Wed, 02 Aug 2023 12:24:21 +0700</pubDate>
+      
+      <guid>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</guid>
+      <description>The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
+if url.absoluteString.contains(&amp;#34;/login&amp;#34;) { // Navigate to Login screen } else if url.absoluteString.contains(&amp;#34;/products&amp;#34;) { // Navigate to Products screen } else if url.absoluteString.contains(&amp;#34;/payment&amp;#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs.</description>
+    </item>
+    
     <item>
       <title>[Flutter] Integrate Hive in 6 steps</title>
       <link>https://knn90.github.io/posts/flutter/integrate_hive/</link>

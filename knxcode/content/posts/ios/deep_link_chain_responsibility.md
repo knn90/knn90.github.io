@@ -22,7 +22,7 @@ The idea of deep linking is simple. You have an URL click to open your applicati
 
 You can imagine what happens if you have ten types of URLs. This design also violates the **Open/Closed Principle**, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.
 
-![chain_responsibility](/static/images/ios/chain_responsibility.png)
+![chain_responsibility](/images/ios/chain_responsibility.png)
 
 Let me briefly explain what each class does, the details will come later.
 

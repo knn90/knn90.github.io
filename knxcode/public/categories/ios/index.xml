@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>knxCode</title>
-    <link>https://knn90.github.io/</link>
-    <description>Recent content on knxCode</description>
+    <title>ios on knxCode</title>
+    <link>https://knn90.github.io/categories/ios/</link>
+    <description>Recent content in ios on knxCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[iOS] Handle deep link with chain responsibility pattern</title>
       <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
@@ -15,19 +15,6 @@
       <guid>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</guid>
       <description>The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
 if url.absoluteString.contains(&amp;#34;/login&amp;#34;) { // Navigate to Login screen } else if url.absoluteString.contains(&amp;#34;/products&amp;#34;) { // Navigate to Products screen } else if url.absoluteString.contains(&amp;#34;/payment&amp;#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs.</description>
-    </item>
-    
-    <item>
-      <title>[Flutter] Integrate Hive in 6 steps</title>
-      <link>https://knn90.github.io/posts/flutter/integrate_hive/</link>
-      <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/posts/flutter/integrate_hive/</guid>
-      <description>Hive introduction You can find everything here https://pub.dev/packages/hive
-Steps From Visual Studio Code Cmd + Shift + P to Add dependency then search for hive_flutter.
-From Visual Studio Code Cmd + Shift + P to Add Dev dependency then search for build_runner and hive_generator.
-Mark the model as HiveType and import part [model_name].g.dart to generate the adapter in the next step.
-import &amp;#39;package:hive_flutter/hive_flutter.dart&amp;#39;; part &amp;#39;model.g.dart&amp;#39;; @HiveType(typeId: 0) class YourModel { @HiveField(0) final String property1; @HiveField(1) final String property2; YourModel(this.</description>
     </item>
     
   </channel>
