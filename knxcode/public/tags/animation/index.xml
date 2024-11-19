@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>swift on knxCode</title>
-    <link>https://knn90.github.io/tags/swift/</link>
-    <description>Recent content in swift on knxCode</description>
+    <title>animation on knxCode</title>
+    <link>https://knn90.github.io/tags/animation/</link>
+    <description>Recent content in animation on knxCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Nov 2024 19:18:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Nov 2024 19:18:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/animation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView</title>
       <link>https://knn90.github.io/posts/ios/animatedtoastview/</link>
@@ -16,16 +16,6 @@
       <description>AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
 Code Overview Here&amp;rsquo;s the implementation and usage of AnimatedToastView:
 struct AnimatedToastView&amp;lt;Content: View&amp;gt;: View { @State private var isVisible: Bool = false private let content: () -&amp;gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&amp;gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .</description>
-    </item>
-    
-    <item>
-      <title>[iOS] Handle deep link with chain responsibility pattern</title>
-      <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
-      <pubDate>Wed, 02 Aug 2023 12:24:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</guid>
-      <description>The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
-if url.absoluteString.contains(&amp;#34;/login&amp;#34;) { // Navigate to Login screen } else if url.absoluteString.contains(&amp;#34;/products&amp;#34;) { // Navigate to Products screen } else if url.absoluteString.contains(&amp;#34;/payment&amp;#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs.</description>
     </item>
     
   </channel>

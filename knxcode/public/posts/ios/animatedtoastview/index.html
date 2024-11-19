@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView | knxCode</title>
+<meta name="keywords" content="SwiftUI, swift, animation">
+<meta name="description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
+Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
+struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .">
+<meta name="author" content="">
+<link rel="canonical" href="https://knn90.github.io/posts/ios/animatedtoastview/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://knn90.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://knn90.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://knn90.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://knn90.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://knn90.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView" />
+<meta property="og:description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
+Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
+struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://knn90.github.io/posts/ios/animatedtoastview/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-11-19T19:18:21+07:00" />
+<meta property="article:modified_time" content="2024-11-19T19:18:21+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView"/>
+<meta name="twitter:description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
+Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
+struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } ."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://knn90.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
+      "item": "https://knn90.github.io/posts/ios/animatedtoastview/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
+  "name": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
+  "description": "AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.\nCode Overview Here\u0026rsquo;s the implementation and usage of AnimatedToastView:\nstruct AnimatedToastView\u0026lt;Content: View\u0026gt;: View { @State private var isVisible: Bool = false private let content: () -\u0026gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -\u0026gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .",
+  "keywords": [
+    "SwiftUI", "swift", "animation"
+  ],
+  "articleBody": "AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.\nCode Overview Here’s the implementation and usage of AnimatedToastView:\nstruct AnimatedToastView: View { @State private var isVisible: Bool = false private let content: () -\u003e Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -\u003e Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .task { withAnimation(.easeInOut) { isVisible = true } Timer.scheduledTimer( withTimeInterval: TimeInterval(displayDuration), repeats: false) { _ in withAnimation(.easeInOut) { isVisible = false } } } } } Understanding the Structure State Management: The @State property isVisible determines when the content should be displayed, automatically triggering animations when it changes.\nInitializer: Accepts a displayDuration to define how long the content should stay visible before being animated out of view, and a content view which will be animated.\nTask Modifier: Used to schedule the animations:\nInitially animates isVisible to true, making the content appear with a smooth animation. A Timer is used to handle the automatic disappearance of the view after the specified duration. Preview The animation for showing/hiding the content of AnimatedToastView is fully customizable.\nstruct ContentView: View { var body: some View { VStack(spacing: 16) { ZStack { background AnimatedToastView(displayDuration: 2.0) { sampleText } }.frame(height: 100) HStack { background AnimatedToastView(displayDuration: 3.0) { sampleText .transition(.move(edge: .trailing)) } }.frame(height: 100) HStack { AnimatedToastView(displayDuration: 3.0) { sampleText .transition(.move(edge: .leading)) } background }.frame(height: 100) VStack() { background AnimatedToastView(displayDuration: 4.0) { sampleText .transition(.move(edge: .bottom)) } }.frame(height: 100) } .padding() } @ViewBuilder private var background: some View { LinearGradient( gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)]), startPoint: .top, endPoint: .bottom ) } @ViewBuilder private var sampleText: some View { Text(\"Welcome to SwiftUI!\") .font(.headline) .padding() .background(Color.green) .cornerRadius(12) .shadow(radius: 5) } } You can find the source code here\nHappy coding! ",
+  "wordCount" : "309",
+  "inLanguage": "en",
+  "datePublished": "2024-11-19T19:18:21+07:00",
+  "dateModified": "2024-11-19T19:18:21+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://knn90.github.io/posts/ios/animatedtoastview/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "knxCode",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://knn90.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://knn90.github.io/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://knn90.github.io/categories/ios" title="iOS">
+                    <span>iOS</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://knn90.github.io/categories/flutter" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://knn90.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      [iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView
+    </h1>
+    <div class="post-meta"><span title='2024-11-19 19:18:21 +0700 +07'>November 19, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.</p>
+<h2 id="code-overview">Code Overview<a hidden class="anchor" aria-hidden="true" href="#code-overview">#</a></h2>
+<p>Here&rsquo;s the implementation and usage of <code>AnimatedToastView</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">AnimatedToastView</span>&lt;Content: View&gt;: View {
+</span></span><span style="display:flex;"><span>    @State <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> isVisible: Bool = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> content: () -&gt; Content
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> displayDuration: CGFloat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.displayDuration = displayDuration
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.content = content
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> isVisible {
+</span></span><span style="display:flex;"><span>                content()
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .task {
+</span></span><span style="display:flex;"><span>            withAnimation(.easeInOut) {
+</span></span><span style="display:flex;"><span>                isVisible = <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            Timer.scheduledTimer(
+</span></span><span style="display:flex;"><span>                withTimeInterval: TimeInterval(displayDuration),
+</span></span><span style="display:flex;"><span>                repeats: <span style="color:#66d9ef">false</span>) { <span style="color:#66d9ef">_</span> <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>                    withAnimation(.easeInOut) {
+</span></span><span style="display:flex;"><span>                        isVisible = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="understanding-the-structure">Understanding the Structure<a hidden class="anchor" aria-hidden="true" href="#understanding-the-structure">#</a></h2>
+<ul>
+<li>
+<p><strong>State Management</strong>: The <code>@State</code> property <code>isVisible</code> determines when the content should be displayed, automatically triggering animations when it changes.</p>
+</li>
+<li>
+<p><strong>Initializer</strong>: Accepts a <code>displayDuration</code> to define how long the content should stay visible before being animated out of view, and a <code>content</code> view which will be animated.</p>
+</li>
+<li>
+<p><strong>Task Modifier</strong>: Used to schedule the animations:</p>
+<ul>
+<li>Initially animates <code>isVisible</code> to <code>true</code>, making the content appear with a smooth animation.</li>
+<li>A <code>Timer</code> is used to handle the automatic disappearance of the view after the specified duration.</li>
+</ul>
+</li>
+</ul>
+<h2 id="preview">Preview<a hidden class="anchor" aria-hidden="true" href="#preview">#</a></h2>
+<p>The animation for showing/hiding the content of <code>AnimatedToastView</code> is fully customizable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ContentView</span>: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        VStack(spacing: <span style="color:#ae81ff">16</span>) {
+</span></span><span style="display:flex;"><span>            ZStack {
+</span></span><span style="display:flex;"><span>                background
+</span></span><span style="display:flex;"><span>                AnimatedToastView(displayDuration: <span style="color:#ae81ff">2.0</span>) {
+</span></span><span style="display:flex;"><span>                    sampleText
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }.frame(height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            HStack {
+</span></span><span style="display:flex;"><span>                background
+</span></span><span style="display:flex;"><span>                AnimatedToastView(displayDuration: <span style="color:#ae81ff">3.0</span>) {
+</span></span><span style="display:flex;"><span>                    sampleText
+</span></span><span style="display:flex;"><span>                        .transition(.move(edge: .trailing))
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }.frame(height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            HStack {
+</span></span><span style="display:flex;"><span>                AnimatedToastView(displayDuration: <span style="color:#ae81ff">3.0</span>) {
+</span></span><span style="display:flex;"><span>                    sampleText
+</span></span><span style="display:flex;"><span>                        .transition(.move(edge: .leading))
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                background
+</span></span><span style="display:flex;"><span>            }.frame(height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            VStack() {
+</span></span><span style="display:flex;"><span>                background
+</span></span><span style="display:flex;"><span>                AnimatedToastView(displayDuration: <span style="color:#ae81ff">4.0</span>) {
+</span></span><span style="display:flex;"><span>                    sampleText
+</span></span><span style="display:flex;"><span>                        .transition(.move(edge: .bottom))
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }.frame(height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .padding()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @ViewBuilder
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> background: some View {
+</span></span><span style="display:flex;"><span>        LinearGradient(
+</span></span><span style="display:flex;"><span>            gradient: Gradient(colors: [Color.blue.opacity(<span style="color:#ae81ff">0.3</span>), Color.purple.opacity(<span style="color:#ae81ff">0.3</span>)]),
+</span></span><span style="display:flex;"><span>            startPoint: .top,
+</span></span><span style="display:flex;"><span>            endPoint: .bottom
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @ViewBuilder
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> sampleText: some View {
+</span></span><span style="display:flex;"><span>        Text(<span style="color:#e6db74">&#34;Welcome to SwiftUI!&#34;</span>)
+</span></span><span style="display:flex;"><span>            .font(.headline)
+</span></span><span style="display:flex;"><span>            .padding()
+</span></span><span style="display:flex;"><span>            .background(Color.green)
+</span></span><span style="display:flex;"><span>            .cornerRadius(<span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>            .shadow(radius: <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img loading="lazy" src="/images/ios/animatedToast_preview.gif" alt="AnimatedToastView_preview"  />
+</p>
+<p>You can find the source code <a href="https://github.com/knn90/AnimatedToastView.git">here</a></p>
+<h3 id="happy-coding">Happy coding!<a hidden class="anchor" aria-hidden="true" href="#happy-coding">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://knn90.github.io/tags/swiftui/">SwiftUI</a></li>
+      <li><a href="https://knn90.github.io/tags/swift/">swift</a></li>
+      <li><a href="https://knn90.github.io/tags/animation/">animation</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://knn90.github.io/">knxCode</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

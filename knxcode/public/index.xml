@@ -6,7 +6,18 @@
     <description>Recent content on knxCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Nov 2024 19:18:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView</title>
+      <link>https://knn90.github.io/posts/ios/animatedtoastview/</link>
+      <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
+      
+      <guid>https://knn90.github.io/posts/ios/animatedtoastview/</guid>
+      <description>AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
+Code Overview Here&amp;rsquo;s the implementation and usage of AnimatedToastView:
+struct AnimatedToastView&amp;lt;Content: View&amp;gt;: View { @State private var isVisible: Bool = false private let content: () -&amp;gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&amp;gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .</description>
+    </item>
+    
     <item>
       <title>[iOS] Handle deep link with chain responsibility pattern</title>
       <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
