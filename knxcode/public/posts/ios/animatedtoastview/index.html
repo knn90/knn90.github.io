@@ -1,27 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView | knxCode</title>
 <meta name="keywords" content="SwiftUI, swift, animation">
 <meta name="description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
-Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
-struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .">
+Code Overview
+Here&rsquo;s the implementation and usage of AnimatedToastView:
+struct AnimatedToastView&lt;Content: View&gt;: View {
+    @State private var isVisible: Bool = false
+    private let content: () -&gt; Content
+    private let displayDuration: CGFloat
+
+    init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) {
+        self.displayDuration = displayDuration
+        self.content = content
+    }
+
+    var body: some View {
+        VStack {
+            if isVisible {
+                content()
+            }
+        }
+        .task {
+            withAnimation(.easeInOut) {
+                isVisible = true
+            }
+            Timer.scheduledTimer(
+                withTimeInterval: TimeInterval(displayDuration),
+                repeats: false) { _ in
+                    withAnimation(.easeInOut) {
+                        isVisible = false
+                    }
+                }
+        }
+    }
+}
+Understanding the Structure
+
+
+State Management: The @State property isVisible determines when the content should be displayed, automatically triggering animations when it changes.">
 <meta name="author" content="">
-<link rel="canonical" href="https://knn90.github.io/posts/ios/animatedtoastview/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://knn90.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://knn90.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://knn90.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://knn90.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://knn90.github.io/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/ios/animatedtoastview/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ios/animatedtoastview/">
 <noscript>
     <style>
         #theme-toggle,
@@ -39,7 +72,7 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -58,71 +91,7 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
         }
 
     </style>
-</noscript><meta property="og:title" content="[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView" />
-<meta property="og:description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
-Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
-struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } ." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://knn90.github.io/posts/ios/animatedtoastview/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-11-19T19:18:21+07:00" />
-<meta property="article:modified_time" content="2024-11-19T19:18:21+07:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView"/>
-<meta name="twitter:description" content="AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
-Code Overview Here&rsquo;s the implementation and usage of AnimatedToastView:
-struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisible: Bool = false private let content: () -&gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } ."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://knn90.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
-      "item": "https://knn90.github.io/posts/ios/animatedtoastview/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
-  "name": "[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView",
-  "description": "AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.\nCode Overview Here\u0026rsquo;s the implementation and usage of AnimatedToastView:\nstruct AnimatedToastView\u0026lt;Content: View\u0026gt;: View { @State private var isVisible: Bool = false private let content: () -\u0026gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -\u0026gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .",
-  "keywords": [
-    "SwiftUI", "swift", "animation"
-  ],
-  "articleBody": "AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.\nCode Overview Here’s the implementation and usage of AnimatedToastView:\nstruct AnimatedToastView: View { @State private var isVisible: Bool = false private let content: () -\u003e Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -\u003e Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .task { withAnimation(.easeInOut) { isVisible = true } Timer.scheduledTimer( withTimeInterval: TimeInterval(displayDuration), repeats: false) { _ in withAnimation(.easeInOut) { isVisible = false } } } } } Understanding the Structure State Management: The @State property isVisible determines when the content should be displayed, automatically triggering animations when it changes.\nInitializer: Accepts a displayDuration to define how long the content should stay visible before being animated out of view, and a content view which will be animated.\nTask Modifier: Used to schedule the animations:\nInitially animates isVisible to true, making the content appear with a smooth animation. A Timer is used to handle the automatic disappearance of the view after the specified duration. Preview The animation for showing/hiding the content of AnimatedToastView is fully customizable.\nstruct ContentView: View { var body: some View { VStack(spacing: 16) { ZStack { background AnimatedToastView(displayDuration: 2.0) { sampleText } }.frame(height: 100) HStack { background AnimatedToastView(displayDuration: 3.0) { sampleText .transition(.move(edge: .trailing)) } }.frame(height: 100) HStack { AnimatedToastView(displayDuration: 3.0) { sampleText .transition(.move(edge: .leading)) } background }.frame(height: 100) VStack() { background AnimatedToastView(displayDuration: 4.0) { sampleText .transition(.move(edge: .bottom)) } }.frame(height: 100) } .padding() } @ViewBuilder private var background: some View { LinearGradient( gradient: Gradient(colors: [Color.blue.opacity(0.3), Color.purple.opacity(0.3)]), startPoint: .top, endPoint: .bottom ) } @ViewBuilder private var sampleText: some View { Text(\"Welcome to SwiftUI!\") .font(.headline) .padding() .background(Color.green) .cornerRadius(12) .shadow(radius: 5) } } You can find the source code here\nHappy coding! ",
-  "wordCount" : "309",
-  "inLanguage": "en",
-  "datePublished": "2024-11-19T19:18:21+07:00",
-  "dateModified": "2024-11-19T19:18:21+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://knn90.github.io/posts/ios/animatedtoastview/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "knxCode",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://knn90.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -140,7 +109,7 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://knn90.github.io/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
+            <a href="http://localhost:1313/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -166,17 +135,17 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
         </div>
         <ul id="menu">
             <li>
-                <a href="https://knn90.github.io/categories/ios" title="iOS">
+                <a href="http://localhost:1313/categories/ios" title="iOS">
                     <span>iOS</span>
                 </a>
             </li>
             <li>
-                <a href="https://knn90.github.io/categories/flutter" title="Flutter">
+                <a href="http://localhost:1313/categories/flutter" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="https://knn90.github.io/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -188,7 +157,7 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
 <article class="post-single">
   <header class="post-header">
     
-    <h1 class="post-title">
+    <h1 class="post-title entry-hint-parent">
       [iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView
     </h1>
     <div class="post-meta"><span title='2024-11-19 19:18:21 +0700 +07'>November 19, 2024</span>
@@ -302,8 +271,7 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
 </span></span><span style="display:flex;"><span>            .shadow(radius: <span style="color:#ae81ff">5</span>)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img loading="lazy" src="/images/ios/animatedToast_preview.gif" alt="AnimatedToastView_preview"  />
-</p>
+</span></span></code></pre></div><p><img alt="AnimatedToastView_preview" loading="lazy" src="/images/ios/animatedToast_preview.gif"></p>
 <p>You can find the source code <a href="https://github.com/knn90/AnimatedToastView.git">here</a></p>
 <h3 id="happy-coding">Happy coding!<a hidden class="anchor" aria-hidden="true" href="#happy-coding">#</a></h3>
 
@@ -312,16 +280,17 @@ struct AnimatedToastView&lt;Content: View&gt;: View { @State private var isVisib
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://knn90.github.io/tags/swiftui/">SwiftUI</a></li>
-      <li><a href="https://knn90.github.io/tags/swift/">swift</a></li>
-      <li><a href="https://knn90.github.io/tags/animation/">animation</a></li>
+      <li><a href="http://localhost:1313/tags/swiftui/">SwiftUI</a></li>
+      <li><a href="http://localhost:1313/tags/swift/">Swift</a></li>
+      <li><a href="http://localhost:1313/tags/animation/">Animation</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2024 <a href="https://knn90.github.io/">knxCode</a></span>
+        <span>&copy; 2024 <a href="http://localhost:1313/">knxCode</a></span> · 
+
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &

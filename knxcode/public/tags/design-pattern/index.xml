@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>design-pattern on knxCode</title>
-    <link>https://knn90.github.io/tags/design-pattern/</link>
-    <description>Recent content in design-pattern on knxCode</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Design-Pattern on knxCode</title>
+    <link>http://localhost:1313/tags/design-pattern/</link>
+    <description>Recent content in Design-Pattern on knxCode</description>
+    <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 12:24:21 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[iOS] Handle deep link with chain responsibility pattern</title>
-      <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
+      <link>http://localhost:1313/posts/ios/deep_link_chain_responsibility/</link>
       <pubDate>Wed, 02 Aug 2023 12:24:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</guid>
-      <description>The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
-if url.absoluteString.contains(&amp;#34;/login&amp;#34;) { // Navigate to Login screen } else if url.absoluteString.contains(&amp;#34;/products&amp;#34;) { // Navigate to Products screen } else if url.absoluteString.contains(&amp;#34;/payment&amp;#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs.</description>
+      <guid>http://localhost:1313/posts/ios/deep_link_chain_responsibility/</guid>
+      <description>&lt;p&gt;The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Swift&#34; data-lang=&#34;Swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; url.absoluteString.contains(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/login&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Navigate to Login screen&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; url.absoluteString.contains(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/products&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Navigate to Products screen&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; url.absoluteString.contains(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/payment&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Navigate to Payment screen&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    } &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Navigate to Home screen&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can imagine what happens if you have ten types of URLs. This design also violates the &lt;strong&gt;Open/Closed Principle&lt;/strong&gt;, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

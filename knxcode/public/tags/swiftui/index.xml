@@ -2,21 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SwiftUI on knxCode</title>
-    <link>https://knn90.github.io/tags/swiftui/</link>
+    <link>http://localhost:1313/tags/swiftui/</link>
     <description>Recent content in SwiftUI on knxCode</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Nov 2024 19:18:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Nov 2024 16:23:21 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[iOS] Creating a Custom Animating Dashed Border in SwiftUI</title>
+      <link>http://localhost:1313/posts/ios/animatedborderview/</link>
+      <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
+      <guid>http://localhost:1313/posts/ios/animatedborderview/</guid>
+      <description>&lt;p&gt;Adding visual interest to your SwiftUI views is a breeze with animated dashed borders. Let me guide you through creating a custom dashed border that can bring a refreshing dynamism to your UI designs.&lt;/p&gt;
+&lt;h4 id=&#34;implementation-details&#34;&gt;Implementation Details&lt;/h4&gt;
+&lt;p&gt;Take a look at our refined implementation of the &lt;code&gt;DashedRoundRectView&lt;/code&gt;. It&amp;rsquo;s designed to offer you an animated, customizable dashed border for rounded rectangles. This view is both flexible and adaptable to diverse design requirements:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView</title>
-      <link>https://knn90.github.io/posts/ios/animatedtoastview/</link>
+      <link>http://localhost:1313/posts/ios/animatedtoastview/</link>
       <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/posts/ios/animatedtoastview/</guid>
-      <description>AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.
-Code Overview Here&amp;rsquo;s the implementation and usage of AnimatedToastView:
-struct AnimatedToastView&amp;lt;Content: View&amp;gt;: View { @State private var isVisible: Bool = false private let content: () -&amp;gt; Content private let displayDuration: CGFloat init(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&amp;gt; Content) { self.displayDuration = displayDuration self.content = content } var body: some View { VStack { if isVisible { content() } } .</description>
+      <guid>http://localhost:1313/posts/ios/animatedtoastview/</guid>
+      <description>&lt;p&gt;AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.&lt;/p&gt;
+&lt;h2 id=&#34;code-overview&#34;&gt;Code Overview&lt;/h2&gt;
+&lt;p&gt;Here&amp;rsquo;s the implementation and usage of &lt;code&gt;AnimatedToastView&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AnimatedToastView&lt;/span&gt;&amp;lt;Content: View&amp;gt;: View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    @State &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; isVisible: Bool = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; content: () -&amp;gt; Content
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; displayDuration: CGFloat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;init&lt;/span&gt;(displayDuration: CGFloat, @ViewBuilder content: @escaping () -&amp;gt; Content) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.displayDuration = displayDuration
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;self&lt;/span&gt;.content = content
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        VStack {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; isVisible {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                content()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .task {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            withAnimation(.easeInOut) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                isVisible = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Timer.scheduledTimer(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                withTimeInterval: TimeInterval(displayDuration),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                repeats: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;) { &lt;span style=&#34;color:#66d9ef&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    withAnimation(.easeInOut) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        isVisible = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;understanding-the-structure&#34;&gt;Understanding the Structure&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;State Management&lt;/strong&gt;: The &lt;code&gt;@State&lt;/code&gt; property &lt;code&gt;isVisible&lt;/code&gt; determines when the content should be displayed, automatically triggering animations when it changes.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

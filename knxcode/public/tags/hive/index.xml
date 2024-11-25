@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>hive on knxCode</title>
-    <link>https://knn90.github.io/tags/hive/</link>
-    <description>Recent content in hive on knxCode</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Hive on knxCode</title>
+    <link>http://localhost:1313/tags/hive/</link>
+    <description>Recent content in Hive on knxCode</description>
+    <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Aug 2023 11:38:01 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/hive/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 11:38:01 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hive/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Flutter] Integrate Hive in 6 steps</title>
-      <link>https://knn90.github.io/posts/flutter/integrate_hive/</link>
+      <link>http://localhost:1313/posts/flutter/integrate_hive/</link>
       <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/posts/flutter/integrate_hive/</guid>
-      <description>Hive introduction You can find everything here https://pub.dev/packages/hive
-Steps From Visual Studio Code Cmd + Shift + P to Add dependency then search for hive_flutter.
-From Visual Studio Code Cmd + Shift + P to Add Dev dependency then search for build_runner and hive_generator.
-Mark the model as HiveType and import part [model_name].g.dart to generate the adapter in the next step.
-import &amp;#39;package:hive_flutter/hive_flutter.dart&amp;#39;; part &amp;#39;model.g.dart&amp;#39;; @HiveType(typeId: 0) class YourModel { @HiveField(0) final String property1; @HiveField(1) final String property2; YourModel(this.</description>
+      <guid>http://localhost:1313/posts/flutter/integrate_hive/</guid>
+      <description>&lt;h2 id=&#34;hive-introduction&#34;&gt;Hive introduction&lt;/h2&gt;
+&lt;p&gt;You can find everything here &lt;a href=&#34;https://pub.dev/packages/hive&#34;&gt;https://pub.dev/packages/hive&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;steps&#34;&gt;Steps&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;From Visual Studio Code &lt;code&gt;Cmd + Shift + P&lt;/code&gt; to &lt;code&gt;Add dependency&lt;/code&gt; then search for &lt;code&gt;hive_flutter&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From Visual Studio Code &lt;code&gt;Cmd + Shift + P&lt;/code&gt; to &lt;code&gt;Add Dev dependency&lt;/code&gt; then search for &lt;code&gt;build_runner&lt;/code&gt; and &lt;code&gt;hive_generator&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mark the model as &lt;code&gt;HiveType&lt;/code&gt; and import &lt;code&gt;part [model_name].g.dart&lt;/code&gt; to generate the adapter in the next step.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Dart&#34; data-lang=&#34;Dart&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;package:hive_flutter/hive_flutter.dart&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;part&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;model.g.dart&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;@&lt;/span&gt;HiveType(typeId: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;YourModel&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;@&lt;/span&gt;HiveField(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt; property1;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;@&lt;/span&gt;HiveField(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;String&lt;/span&gt; property2;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   YourModel(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.property1, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.property2);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From the terminal, run &lt;code&gt;dart run build_runner build&lt;/code&gt; to generate the HiveAdapter.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,6 +4,7 @@ date: 2024-11-25T16:23:21+07:00
 draft: false
 tags: ["SwiftUI", "swift", "animation"]
 categories: ["ios"]
+math: true
 ---
 
 Adding visual interest to your SwiftUI views is a breeze with animated dashed borders. Let me guide you through creating a custom dashed border that can bring a refreshing dynamism to your UI designs.

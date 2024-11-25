@@ -2,64 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on knxCode</title>
-    <link>https://knn90.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on knxCode</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 19 Nov 2024 19:18:21 +0700</lastBuildDate><atom:link href="https://knn90.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Nov 2024 16:23:21 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>animation</title>
-      <link>https://knn90.github.io/tags/animation/</link>
-      <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/animation/</guid>
+      <title>Animation</title>
+      <link>http://localhost:1313/tags/animation/</link>
+      <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
+      <guid>http://localhost:1313/tags/animation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>swift</title>
-      <link>https://knn90.github.io/tags/swift/</link>
-      <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/swift/</guid>
+      <title>Swift</title>
+      <link>http://localhost:1313/tags/swift/</link>
+      <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
+      <guid>http://localhost:1313/tags/swift/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SwiftUI</title>
-      <link>https://knn90.github.io/tags/swiftui/</link>
-      <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/swiftui/</guid>
+      <link>http://localhost:1313/tags/swiftui/</link>
+      <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
+      <guid>http://localhost:1313/tags/swiftui/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>design-pattern</title>
-      <link>https://knn90.github.io/tags/design-pattern/</link>
+      <title>Design-Pattern</title>
+      <link>http://localhost:1313/tags/design-pattern/</link>
       <pubDate>Wed, 02 Aug 2023 12:24:21 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/design-pattern/</guid>
+      <guid>http://localhost:1313/tags/design-pattern/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>dart</title>
-      <link>https://knn90.github.io/tags/dart/</link>
+      <title>Dart</title>
+      <link>http://localhost:1313/tags/dart/</link>
       <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/dart/</guid>
+      <guid>http://localhost:1313/tags/dart/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hive</title>
-      <link>https://knn90.github.io/tags/hive/</link>
+      <title>Hive</title>
+      <link>http://localhost:1313/tags/hive/</link>
       <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      
-      <guid>https://knn90.github.io/tags/hive/</guid>
+      <guid>http://localhost:1313/tags/hive/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -1,6 +1,8 @@
 baseURL: "https://knn90.github.io/"
 title: knxCode
 theme: PaperMod
+params:
+  math: false
 
 menu:
   main:
