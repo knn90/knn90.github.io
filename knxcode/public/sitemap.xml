@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/ios/animatedborderview/</loc>
+    <loc>https://knn90.github.io/posts/ios/animatedborderview/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/animation/</loc>
+    <loc>https://knn90.github.io/tags/animation/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://knn90.github.io/categories/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/ios/</loc>
+    <loc>https://knn90.github.io/categories/ios/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://knn90.github.io/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://knn90.github.io/posts/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/swift/</loc>
+    <loc>https://knn90.github.io/tags/swift/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/swiftui/</loc>
+    <loc>https://knn90.github.io/tags/swiftui/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://knn90.github.io/tags/</loc>
     <lastmod>2024-11-25T16:23:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/ios/animatedtoastview/</loc>
+    <loc>https://knn90.github.io/posts/ios/animatedtoastview/</loc>
     <lastmod>2024-11-19T19:18:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/ios/deep_link_chain_responsibility/</loc>
+    <loc>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</loc>
     <lastmod>2023-08-02T12:24:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/design-pattern/</loc>
+    <loc>https://knn90.github.io/tags/design-pattern/</loc>
     <lastmod>2023-08-02T12:24:21+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/flutter/integrate_hive/</loc>
+    <loc>https://knn90.github.io/posts/flutter/integrate_hive/</loc>
     <lastmod>2023-08-01T11:38:01+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dart/</loc>
+    <loc>https://knn90.github.io/tags/dart/</loc>
     <lastmod>2023-08-01T11:38:01+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/flutter/</loc>
+    <loc>https://knn90.github.io/categories/flutter/</loc>
     <lastmod>2023-08-01T11:38:01+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hive/</loc>
+    <loc>https://knn90.github.io/tags/hive/</loc>
     <lastmod>2023-08-01T11:38:01+07:00</lastmod>
   </url>
 </urlset>

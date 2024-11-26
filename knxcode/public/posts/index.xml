@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on knxCode</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://knn90.github.io/posts/</link>
     <description>Recent content in Posts on knxCode</description>
     <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
     <lastBuildDate>Mon, 25 Nov 2024 16:23:21 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://knn90.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[iOS] Creating a Custom Animating Dashed Border in SwiftUI</title>
-      <link>http://localhost:1313/posts/ios/animatedborderview/</link>
+      <link>https://knn90.github.io/posts/ios/animatedborderview/</link>
       <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
-      <guid>http://localhost:1313/posts/ios/animatedborderview/</guid>
+      <guid>https://knn90.github.io/posts/ios/animatedborderview/</guid>
       <description>&lt;p&gt;Adding visual interest to your SwiftUI views is a breeze with animated dashed borders. Let me guide you through creating a custom dashed border that can bring a refreshing dynamism to your UI designs.&lt;/p&gt;
 &lt;h4 id=&#34;implementation-details&#34;&gt;Implementation Details&lt;/h4&gt;
 &lt;p&gt;Take a look at our refined implementation of the &lt;code&gt;DashedRoundRectView&lt;/code&gt;. It&amp;rsquo;s designed to offer you an animated, customizable dashed border for rounded rectangles. This view is both flexible and adaptable to diverse design requirements:&lt;/p&gt;</description>
     </item>
     <item>
       <title>[iOS] Enhance User Experience with Smooth Transitions in SwiftUI using AnimatedToastView</title>
-      <link>http://localhost:1313/posts/ios/animatedtoastview/</link>
+      <link>https://knn90.github.io/posts/ios/animatedtoastview/</link>
       <pubDate>Tue, 19 Nov 2024 19:18:21 +0700</pubDate>
-      <guid>http://localhost:1313/posts/ios/animatedtoastview/</guid>
+      <guid>https://knn90.github.io/posts/ios/animatedtoastview/</guid>
       <description>&lt;p&gt;AnimatedToastView enhances SwiftUI applications by automating view transitions with smooth animations. By customizing the duration and leveraging various transition effects.&lt;/p&gt;
 &lt;h2 id=&#34;code-overview&#34;&gt;Code Overview&lt;/h2&gt;
 &lt;p&gt;Here&amp;rsquo;s the implementation and usage of &lt;code&gt;AnimatedToastView&lt;/code&gt;:&lt;/p&gt;
@@ -62,9 +62,9 @@
     </item>
     <item>
       <title>[iOS] Handle deep link with chain responsibility pattern</title>
-      <link>http://localhost:1313/posts/ios/deep_link_chain_responsibility/</link>
+      <link>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</link>
       <pubDate>Wed, 02 Aug 2023 12:24:21 +0700</pubDate>
-      <guid>http://localhost:1313/posts/ios/deep_link_chain_responsibility/</guid>
+      <guid>https://knn90.github.io/posts/ios/deep_link_chain_responsibility/</guid>
       <description>&lt;p&gt;The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Swift&#34; data-lang=&#34;Swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; url.absoluteString.contains(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/login&amp;#34;&lt;/span&gt;) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// Navigate to Login screen&lt;/span&gt;
@@ -79,9 +79,9 @@
     </item>
     <item>
       <title>[Flutter] Integrate Hive in 6 steps</title>
-      <link>http://localhost:1313/posts/flutter/integrate_hive/</link>
+      <link>https://knn90.github.io/posts/flutter/integrate_hive/</link>
       <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      <guid>http://localhost:1313/posts/flutter/integrate_hive/</guid>
+      <guid>https://knn90.github.io/posts/flutter/integrate_hive/</guid>
       <description>&lt;h2 id=&#34;hive-introduction&#34;&gt;Hive introduction&lt;/h2&gt;
 &lt;p&gt;You can find everything here &lt;a href=&#34;https://pub.dev/packages/hive&#34;&gt;https://pub.dev/packages/hive&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;steps&#34;&gt;Steps&lt;/h2&gt;

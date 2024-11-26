@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on knxCode</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://knn90.github.io/categories/</link>
     <description>Recent content in Categories on knxCode</description>
     <generator>Hugo -- 0.139.2</generator>
     <language>en</language>
     <lastBuildDate>Mon, 25 Nov 2024 16:23:21 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://knn90.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ios</title>
-      <link>http://localhost:1313/categories/ios/</link>
+      <link>https://knn90.github.io/categories/ios/</link>
       <pubDate>Mon, 25 Nov 2024 16:23:21 +0700</pubDate>
-      <guid>http://localhost:1313/categories/ios/</guid>
+      <guid>https://knn90.github.io/categories/ios/</guid>
       <description></description>
     </item>
     <item>
       <title>Flutter</title>
-      <link>http://localhost:1313/categories/flutter/</link>
+      <link>https://knn90.github.io/categories/flutter/</link>
       <pubDate>Tue, 01 Aug 2023 11:38:01 +0700</pubDate>
-      <guid>http://localhost:1313/categories/flutter/</guid>
+      <guid>https://knn90.github.io/categories/flutter/</guid>
       <description></description>
     </item>
   </channel>

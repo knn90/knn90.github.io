@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>[iOS] Handle deep link with chain responsibility pattern | knxCode</title>
 <meta name="keywords" content="design-pattern, swift">
 <meta name="description" content="The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
@@ -19,16 +19,16 @@
     }
 You can imagine what happens if you have ten types of URLs. This design also violates the Open/Closed Principle, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/ios/deep_link_chain_responsibility/">
+<link rel="canonical" href="https://knn90.github.io/posts/ios/deep_link_chain_responsibility/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://knn90.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://knn90.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://knn90.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://knn90.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://knn90.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ios/deep_link_chain_responsibility/">
+<link rel="alternate" hreflang="en" href="https://knn90.github.io/posts/ios/deep_link_chain_responsibility/">
 <noscript>
     <style>
         #theme-toggle,
@@ -65,7 +65,82 @@ You can imagine what happens if you have ten types of URLs. This design also vio
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://knn90.github.io/posts/ios/deep_link_chain_responsibility/">
+  <meta property="og:site_name" content="knxCode">
+  <meta property="og:title" content="[iOS] Handle deep link with chain responsibility pattern">
+  <meta property="og:description" content="The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
+if url.absoluteString.contains(&#34;/login&#34;) { // Navigate to Login screen } else if url.absoluteString.contains(&#34;/products&#34;) { // Navigate to Products screen } else if url.absoluteString.contains(&#34;/payment&#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs. This design also violates the Open/Closed Principle, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-02T12:24:21+07:00">
+    <meta property="article:modified_time" content="2023-08-02T12:24:21+07:00">
+    <meta property="article:tag" content="Design-Pattern">
+    <meta property="article:tag" content="Swift">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[iOS] Handle deep link with chain responsibility pattern">
+<meta name="twitter:description" content="The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.
+    if url.absoluteString.contains(&#34;/login&#34;) {
+        // Navigate to Login screen
+    } else if url.absoluteString.contains(&#34;/products&#34;) {
+        // Navigate to Products screen
+    } else if url.absoluteString.contains(&#34;/payment&#34;) {
+        // Navigate to Payment screen
+    } else {
+        // Navigate to Home screen
+    }
+You can imagine what happens if you have ten types of URLs. This design also violates the Open/Closed Principle, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://knn90.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[iOS] Handle deep link with chain responsibility pattern",
+      "item": "https://knn90.github.io/posts/ios/deep_link_chain_responsibility/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[iOS] Handle deep link with chain responsibility pattern",
+  "name": "[iOS] Handle deep link with chain responsibility pattern",
+  "description": "The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.\nif url.absoluteString.contains(\u0026#34;/login\u0026#34;) { // Navigate to Login screen } else if url.absoluteString.contains(\u0026#34;/products\u0026#34;) { // Navigate to Products screen } else if url.absoluteString.contains(\u0026#34;/payment\u0026#34;) { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs. This design also violates the Open/Closed Principle, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.\n",
+  "keywords": [
+    "design-pattern", "swift"
+  ],
+  "articleBody": "The idea of deep linking is simple. You have an URL click to open your application and navigate to a specific screen. However, it can be messy when it comes to code, and you may end up with something like this.\nif url.absoluteString.contains(\"/login\") { // Navigate to Login screen } else if url.absoluteString.contains(\"/products\") { // Navigate to Products screen } else if url.absoluteString.contains(\"/payment\") { // Navigate to Payment screen } else { // Navigate to Home screen } You can imagine what happens if you have ten types of URLs. This design also violates the Open/Closed Principle, and every time you add a new URL, you will have to open this file and add one more if-else block. Now is the solution.\nLet me briefly explain what each class does, the details will come later.\nThe Registry class will hold an array of DeepLinkHandler.\nThe DeepLinkHandler is a protocol with two functions\ncanHandle: take in an URL and return a Bool to determine the ability to handle the URL handle: The action when the application receives the URL When the application is started, all the DeeplinkHandlers are composed and registered to the Registry object.\ninit() { registry = Registry(handlers: [ LoginDeepLinkHandler(), ProductsDeepLinkHandler(), PaymentDeepLinkHandler(), HomeDeepLinkHandler() ]) } And when receiving an URL, the Registry will handle it.\nWindowGroup { ContentView() .onOpenURL { url in registry.handle(url) } } Inside the handle function, we will iterate through the handlers array to find the first handler that can handle the URL and pass the message forward.\nclass Registry { private let handlers: [DeepLinkHandler] init(handlers: [DeepLinkHandler]) { self.handlers = handlers } func handle(_ url: URL) { handlers.first(where: { $0.canHandle(url: url) })?.handle() } } You can add a fallback handler at the end of the handlers array for a better user experience if the URL is not registered yet, for example, a “Can’t handle URL” error or maybe a WebView.\nIn this case, the HomeDeepLinkHandler will be the last one to handle the URL if no one else can.\nThat’s pretty simple, right!?\nSo, where is the chain of responsibility pattern? It’s the iteration in the Registry class. Only the first handler that can handle the URL will do the job. Just like when you tap on the screen, the first view that can process the tap will trigger its action.\nFinally, you don’t need to modify the code when adding a new type of URL type anymore. So that the Open/Closed Principle violation is resolved.\nYou can find the source code here\nThanks to Caio and Mike from EssentialDevelop.com, I learn this design from their talk.\nCheers!!!\n",
+  "wordCount" : "432",
+  "inLanguage": "en",
+  "datePublished": "2023-08-02T12:24:21+07:00",
+  "dateModified": "2023-08-02T12:24:21+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://knn90.github.io/posts/ios/deep_link_chain_responsibility/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "knxCode",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://knn90.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -83,7 +158,7 @@ You can imagine what happens if you have ten types of URLs. This design also vio
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
+            <a href="https://knn90.github.io/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -109,17 +184,17 @@ You can imagine what happens if you have ten types of URLs. This design also vio
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/categories/ios" title="iOS">
+                <a href="https://knn90.github.io/categories/ios" title="iOS">
                     <span>iOS</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/flutter" title="Flutter">
+                <a href="https://knn90.github.io/categories/flutter" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://knn90.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -201,15 +276,15 @@ You can imagine what happens if you have ten types of URLs. This design also vio
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/design-pattern/">Design-Pattern</a></li>
-      <li><a href="http://localhost:1313/tags/swift/">Swift</a></li>
+      <li><a href="https://knn90.github.io/tags/design-pattern/">Design-Pattern</a></li>
+      <li><a href="https://knn90.github.io/tags/swift/">Swift</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">knxCode</a></span> · 
+        <span>&copy; 2024 <a href="https://knn90.github.io/">knxCode</a></span> · 
 
     <span>
         Powered by
