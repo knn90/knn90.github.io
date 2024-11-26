@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>[iOS] Creating a Custom Animating Dashed Border in SwiftUI | knxCode</title>
+<meta name="keywords" content="SwiftUI, swift, animation">
+<meta name="description" content="Adding visual interest to your SwiftUI views is a breeze with animated dashed borders. Let me guide you through creating a custom dashed border that can bring a refreshing dynamism to your UI designs.
+Implementation Details
+Take a look at our refined implementation of the DashedRoundRectView. It&rsquo;s designed to offer you an animated, customizable dashed border for rounded rectangles. This view is both flexible and adaptable to diverse design requirements:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/ios/animatedborderview/animatedborderview/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/ios/animatedborderview/animatedborderview/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="knxCode (Alt + H)">knxCode</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/ios" title="iOS">
+                    <span>iOS</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/flutter" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [iOS] Creating a Custom Animating Dashed Border in SwiftUI
+    </h1>
+    <div class="post-meta"><span title='2024-11-25 16:23:21 +0700 +07'>November 25, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Adding visual interest to your SwiftUI views is a breeze with animated dashed borders. Let me guide you through creating a custom dashed border that can bring a refreshing dynamism to your UI designs.</p>
+<h4 id="implementation-details">Implementation Details<a hidden class="anchor" aria-hidden="true" href="#implementation-details">#</a></h4>
+<p>Take a look at our refined implementation of the <code>DashedRoundRectView</code>. It&rsquo;s designed to offer you an animated, customizable dashed border for rounded rectangles. This view is both flexible and adaptable to diverse design requirements:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">SwiftUI</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DashedRoundRectView</span>&lt;DashColor: ShapeStyle&gt;: View {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> lineWidth: CGFloat
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> dashCount: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> size: CGSize
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> cornerRadius: CGFloat
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> duration: CGFloat
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> dashColor: DashColor
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> dashPhase: CGFloat
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> dashLength: CGFloat
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    @Binding <span style="color:#66d9ef">var</span> phaseAnimation: Bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(
+</span></span><span style="display:flex;"><span>        lineWidth: CGFloat,
+</span></span><span style="display:flex;"><span>        dashCount: Int,
+</span></span><span style="display:flex;"><span>        size: CGSize,
+</span></span><span style="display:flex;"><span>        cornerRadius: CGFloat,
+</span></span><span style="display:flex;"><span>        duration: CGFloat,
+</span></span><span style="display:flex;"><span>        dashColor: DashColor,
+</span></span><span style="display:flex;"><span>        phaseAnimation: Binding&lt;Bool&gt;
+</span></span><span style="display:flex;"><span>    ) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.lineWidth = lineWidth
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dashCount = dashCount
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.size = size
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.cornerRadius = cornerRadius
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.duration = duration
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dashColor = dashColor
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>._phaseAnimation = phaseAnimation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Calculation for the perimeter</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> perimeter = <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (size.width <span style="color:#f92672">+</span> size.height)
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">-</span> (lineWidth <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span>) <span style="color:#75715e">// subtracted to remove the overlaps at the corners.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">-</span> (<span style="color:#ae81ff">8</span> <span style="color:#f92672">*</span> cornerRadius) <span style="color:#75715e">// subtracted to remove the length of the rounded corner part</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">+</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> .pi <span style="color:#f92672">*</span> cornerRadius) <span style="color:#75715e">// added 4 rounded corners which is a whole circle</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dashLength = perimeter <span style="color:#f92672">/</span> CGFloat(dashCount <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.dashPhase = dashLength <span style="color:#f92672">*</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> body: some View {
+</span></span><span style="display:flex;"><span>        RoundedRectangle(cornerRadius: cornerRadius)
+</span></span><span style="display:flex;"><span>            .strokeBorder(dashColor,
+</span></span><span style="display:flex;"><span>                          style: StrokeStyle(
+</span></span><span style="display:flex;"><span>                            lineWidth: lineWidth,
+</span></span><span style="display:flex;"><span>                            lineCap: .round,
+</span></span><span style="display:flex;"><span>                            lineJoin: .round,
+</span></span><span style="display:flex;"><span>                            dash: [dashLength],
+</span></span><span style="display:flex;"><span>                            dashPhase: phaseAnimation ? dashPhase : <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>            .frame(width: size.width, height: size.height)
+</span></span><span style="display:flex;"><span>            .animation(phaseAnimation
+</span></span><span style="display:flex;"><span>                       ? Animation.linear(duration: duration).repeatForever(autoreverses: <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>                       : Animation.<span style="color:#66d9ef">default</span>, value: phaseAnimation)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="key-parameters-explained">Key Parameters Explained<a hidden class="anchor" aria-hidden="true" href="#key-parameters-explained">#</a></h4>
+<p>Our <code>DashedRoundRectView</code> empowers you with extensive customization options. Here’s how each parameter plays a role:</p>
+<ul>
+<li><strong><code>lineWidth</code></strong>: Sets how bold or subtle your border line appears.</li>
+<li><strong><code>dashCount</code></strong>: Determines how many dashes make their way around your view&rsquo;s perimeter.</li>
+<li><strong><code>size</code></strong>: Controls the overall dimensions of your rectangle.</li>
+<li><strong><code>cornerRadius</code></strong>: Ensures each corner has that stylish, smooth curve.</li>
+<li><strong><code>duration</code></strong>: Dictates the pacing of your border animation.</li>
+<li><strong><code>dashColor</code></strong>: Lets you play with different hues or gradients to match your design aesthetics.</li>
+</ul>
+<h4 id="diving-deeper-perimeter-dash-length-and-dash-phase">Diving Deeper: Perimeter, Dash Length, and Dash Phase<a hidden class="anchor" aria-hidden="true" href="#diving-deeper-perimeter-dash-length-and-dash-phase">#</a></h4>
+<p>Let&rsquo;s take a closer look at what goes into making those dashes tick:</p>
+<ul>
+<li>
+<p><strong>Perimeter Calculation</strong>: First, we get the total perimeter by considering both the straight edges and those smoothly rounded corners:</p>
+<p>$$
+\text{perimeter} = 2 \times (\text{width} + \text{height}) - (\text{lineWidth} \times 4) - (8 \times \text{cornerRadius}) + (2 \times \pi \times \text{cornerRadius})
+$$</p>
+</li>
+<li>
+<p><strong><code>dashLength</code></strong>: With the perimeter in hand, <code>dashLength</code> determines how long each dash and its accompanying gap are, making sure they’re evenly spaced:</p>
+<p>$$
+\text{dashLength} = \frac{\text{perimeter}}{(dashCount \times 2)}
+$$</p>
+</li>
+<li>
+<p><strong><code>dashPhase</code></strong>: This controls the offset of the dashes along the stroke path, creating that seamless flow in your animations:</p>
+<p>$$
+\text{dashPhase} = \text{dashLength} \times 2
+$$</p>
+</li>
+</ul>
+<p>These give your view a smooth, flowing animation, breathing life and character into your designs.</p>
+<h4 id="customization-and-preview">Customization and Preview<a hidden class="anchor" aria-hidden="true" href="#customization-and-preview">#</a></h4>
+<p>Wondering how this looks in action? Check out the following preview to see an example implementation in SwiftUI with a vibrant gradient and shadow:</p>
+<p><img alt="AnimatedBorderView_preview" loading="lazy" src="/images/AnimatedBorderPreview.gif"></p>
+<p>With these steps, you’re well on your way to crafting a unique and dynamic UI experience. Feel free to tweak each parameter to suit your style or purpose—explore, experiment, and enjoy the process of creation with SwiftUI!</p>
+<p>You can find the source code <a href="https://github.com/knn90/AnimatedBorderView">here</a></p>
+<h3 id="happy-coding">Happy coding!<a hidden class="anchor" aria-hidden="true" href="#happy-coding">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/swiftui/">SwiftUI</a></li>
+      <li><a href="http://localhost:1313/tags/swift/">Swift</a></li>
+      <li><a href="http://localhost:1313/tags/animation/">Animation</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">knxCode</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
